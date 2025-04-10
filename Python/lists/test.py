@@ -1,7 +1,23 @@
-l = [1,0,0,0,1]
+nums = [20,100,10,12,5,13]
+res = False
 
-for i, f in enumerate(l):
-    if f == 0 and (l[i - 1] == 0 and l[i + 1] == 0 ):
-        l[i] = 1
+min_num = min(nums)
+i_min = nums.index(min_num)
+c = 0
+a = nums[0]
 
-print(l)
+for i in range(len(nums) - 2):
+    if len(nums) < 3:
+        break
+    else:
+        if nums[i] < nums[i+1]:
+            a = nums[i+1]
+            c += 1
+        elif nums[i] > nums[i+1]:
+            a = nums[i+1]
+            c = 0
+
+
+
+print(res)
+print(i_min)
