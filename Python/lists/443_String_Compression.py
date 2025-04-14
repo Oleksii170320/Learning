@@ -17,26 +17,28 @@ from typing import List
 
 class Solution:
     def compress(self, chars: List[str]) -> int:
-        b=[]
-        d=1
-        for i in range(1,len(chars)):
-            if(chars[i]==chars[i-1]):
-                d+=1
+        i = 0
+        cnt = 1
+
+        for j in range(1, len(chars)):
+            if chars[i] != chars[j]:
+                if cnt > 1:
+                    for c in str(cnt):
+                        i += 1
+                        chars[i] = c
+
+                i += 1
+                chars[i] = chars[j]
+                cnt = 1
             else:
-                b.append(chars[i-1])
-                if(d>1):
-                    n=str(d)
-                    for p in n:
-                        b.append(p)
-                    d=1
-        b.append(chars[-1])
-        if d > 1:
-            for p in str(d):
-                b.append(p)
-        chars.clear()
-        for i in b:
-            chars.append(i)
-        return len(chars)
+                cnt += 1
+
+        if cnt > 1:
+            for c in str(cnt):
+                i += 1
+                chars[i] = f"{c}"
+
+        return i + 1
 
 
 chars = ["a", "a", "b", "b", "c", "c", "c"]

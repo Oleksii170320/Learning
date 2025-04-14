@@ -1,23 +1,13 @@
-nums = [20,100,10,12,5,13]
-res = False
+grid = [[3, 2, 1], [1, 7, 6], [2, 7, 7]]
+n = len(grid)
+hash = {}
+pairs = 0
 
-min_num = min(nums)
-i_min = nums.index(min_num)
-c = 0
-a = nums[0]
+for i in range(n):
+    row = tuple(grid[i])
+    hash[row] = hash.get(row, 0) + 1
 
-for i in range(len(nums) - 2):
-    if len(nums) < 3:
-        break
-    else:
-        if nums[i] < nums[i+1]:
-            a = nums[i+1]
-            c += 1
-        elif nums[i] > nums[i+1]:
-            a = nums[i+1]
-            c = 0
+for j in range(n):
+    column = tuple(grid[i][j] for i in range(n))
+    print(column)
 
-
-
-print(res)
-print(i_min)
