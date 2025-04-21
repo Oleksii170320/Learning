@@ -1,20 +1,37 @@
 """
-You are given the head of a linked list. Delete the middle node, and return the head of the modified linked list.
-
-The middle node of a linked list of size n is the ⌊n / 2⌋th node from the start using 0-based indexing,
-where ⌊x⌋ denotes the largest integer less than or equal to x.
-
-For n = 1, 2, 3, 4, and 5, the middle nodes are 0, 1, 1, 2, and 2, respectively.
+Given an array of integers temperatures represents the daily temperatures,
+return an array answer such that answer[i] is the number of days you have to wait after the ith day to get a warmer temperature. If there is no future day for which this is possible,
+keep answer[i] == 0 instead.
 """
 from typing import List
 
 
 class Solution:
-    def reverseList(self, head: List) -> List:
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        res = []
 
-        return 1
+        if len(temperatures) == 0:
+            res.append(0)
+        elif len(temperatures) > 0:
+            c = 0
+            for i in range(len(temperatures) - 1):
+                for t in range(i + 1, len(temperatures)):
+                    t1 = temperatures[i]
+                    t2 = temperatures[t]
+                    if temperatures[i] <= temperatures[t]:
+                        c += 1
+                        res.append(c)
+                        break
+                    elif temperatures[i] > temperatures[t]:
+                        c += 1
+                        if len(temperatures) - i == 2:
+                            res.append(0)
+
+                c = 0
+            res.append(0)
+        return res
 
 
-head = [1, 2, 3, 4, 5]
+temperatures = [73,74,75,71,69,72,76,73]
 w = Solution()
-print(w.reverseList(head))
+print(w.dailyTemperatures(temperatures))
