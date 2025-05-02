@@ -8,7 +8,10 @@ def counter():
 
     return inner
 
+
+
 # ------------------------------------------
+
 
 
 def adder(a: int) -> int:
@@ -25,4 +28,3 @@ if __name__ == '__main__':
 
     add_2 = adder(2)
     print(add_2(55))
-

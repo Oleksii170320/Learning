@@ -47,3 +47,4 @@ if __name__ == "__main__":
 
     print(function_int(3, 5, 7))
     print(function_str("a", "b", "c"))
+    print(function_str("a", "a", "c"))

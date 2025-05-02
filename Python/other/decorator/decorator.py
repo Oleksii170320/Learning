@@ -3,7 +3,6 @@ from datetime import datetime
 
 
 def logger(func):
-
     @wraps(func)
     def inner(*args, **kwargs):
         start = datetime.now()
@@ -15,7 +14,6 @@ def logger(func):
         return res
 
     return inner
-
 
 
 @logger
@@ -36,4 +34,3 @@ if __name__ == "__main__":
     # print(function.__name__)
     # print(function.__doc__)
     print(function.__dict__)
-

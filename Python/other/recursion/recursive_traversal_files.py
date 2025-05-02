@@ -13,5 +13,3 @@ def obhodFiles(path, level=1):
 path = "D:\\image"
 
 obhodFiles(path)
-
-

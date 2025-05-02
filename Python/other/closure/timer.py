@@ -14,3 +14,4 @@ if __name__ == '__main__':
     delta = timer()
     print(delta())
     print(delta())
+    print(delta())
