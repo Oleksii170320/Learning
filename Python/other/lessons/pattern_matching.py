@@ -25,3 +25,5 @@ if __name__ == '__main__':
     assert parse_names(['Іванько', 'Іван']) == "Error"
     assert parse_names({'surname': "Іванько", 'name': "Іван"}) == "Error"
     assert parse_names("Іванько Іван") == "Error"
+    assert parse_names("Іванько Іван Іванько Іван") == "Error"
+
