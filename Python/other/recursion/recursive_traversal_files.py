@@ -10,6 +10,7 @@ def obhodFiles(path, level=1):
             print("Повертаємось", path)
 
 
+
 path = "D:\\image"
 
 obhodFiles(path)

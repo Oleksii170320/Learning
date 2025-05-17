@@ -6,4 +6,7 @@ def palindrome(s: str) -> True:
     return palindrome(s[1:-1])
 
 
-print(palindrome("dad"))
+if __name__ == '__main__':
+    func = palindrome
+
+    print(func("dad"))
